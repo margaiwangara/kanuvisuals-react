@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Person from '@/assets/images/person.svg';
+// import Person from '@/assets/images/person.svg';
 
 function Content() {
   return (
@@ -12,9 +12,6 @@ function Content() {
         <p>Photographer</p>
         <p>24 years old, Sakarya</p>
       </div>
-      <figure>
-        <img src={Person} alt="person" />
-      </figure>
     </HeaderContent>
   );
 }
@@ -26,6 +23,8 @@ const HeaderContent = styled.section`
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   row-gap: 25px;
+  padding: 40px 30px;
+  box-sizing: border-box;
 
   h3 {
     font-size: 47px;
