@@ -1,13 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 // import Person from '@/assets/images/person.svg';
+import Hamburger from '@/assets/icons/hamburger.svg';
 
 function Content() {
+  function openNavbar(e) {
+    e.preventDefault();
+    // find sidebar
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) {
+      return;
+    }
+
+    navbar.style.width = '100%';
+    // alert('Found Navbar');
+  }
+
   return (
     <HeaderContent>
-      <h3>
-        Kanu <span>Visuals</span>
-      </h3>
+      <div>
+        <h3>
+          Kanu <span>Visuals</span>
+        </h3>
+        <a href="#display-menu" onClick={openNavbar}>
+          <figure>
+            <img src={Hamburger} alt="hamburger-menu" />
+          </figure>
+        </a>
+      </div>
       <div>
         <p>Photographer</p>
         <p>24 years old, Sakarya</p>
@@ -38,7 +58,18 @@ const HeaderContent = styled.section`
     }
   }
 
-  div {
+  div:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    figure {
+      display: flex;
+      box-sizing: border-box;
+      padding-top: 22.5px;
+    }
+  }
+
+  div:nth-of-type(2) {
     display: grid;
     grid-template-columns: 1fr;
     p {
@@ -64,7 +95,14 @@ const HeaderContent = styled.section`
       flex: 1;
     }
 
-    div {
+    div:first-of-type {
+      grid-template-columns: 1fr;
+      a {
+        display: none;
+      }
+    }
+
+    div:nth-of-type(2) {
       flex: 1;
     }
 
