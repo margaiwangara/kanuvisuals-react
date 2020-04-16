@@ -91,12 +91,9 @@ const HeaderContent = styled.section`
     display: flex;
     align-items: flex-end;
 
-    h3 {
-      flex: 1;
-    }
-
     div:first-of-type {
       grid-template-columns: 1fr;
+      flex: 1;
       a {
         display: none;
       }
@@ -104,6 +101,8 @@ const HeaderContent = styled.section`
 
     div:nth-of-type(2) {
       flex: 1;
+      box-sizing: border-box;
+      padding-bottom: 10px;
     }
 
     figure {
